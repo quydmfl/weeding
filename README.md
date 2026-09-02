@@ -17,7 +17,7 @@ Sau lần xuất bản đầu tiên, mỗi thay đổi mới trên `main` sẽ t
 ### Không thấy đường dẫn website sau khi Action chạy?
 
 1. Xác nhận job **Deploy to GitHub Pages** đã chạy thành công, không chỉ riêng bước build.
-2. Kiểm tra lại **Settings → Pages → Build and deployment → Source: GitHub Actions**. Lựa chọn này cần được bật một lần cho repository; nếu màn hình Pages báo chưa có website, mở workflow đó và chạy lại bằng **Run workflow**.
+2. Kiểm tra lại **Settings → Pages → Build and deployment → Source: GitHub Actions**. Đây phải là **GitHub Actions**, không phải **Deploy from a branch**. Nếu chọn deploy từ branch, GitHub sẽ phục vụ trực tiếp `index.html` gốc cùng file JSX chưa build; kết quả là thiệp chỉ dừng ở trạng thái đang tải.
 3. Mở trang kết quả của workflow: phần **Summary** sẽ có nút **Mở website** sau bước deploy. URL cũng xuất hiện trong environment `github-pages` ở bên phải workflow run.
 4. Lần triển khai đầu tiên có thể cần vài phút để URL hoạt động. Nếu URL trả về 404 sau đó, kiểm tra workflow được chạy từ `main` và thử **Run workflow** một lần nữa.
 5. Với repository tên `<ten-tai-khoan>.github.io`, website ở đường dẫn gốc; các repository khác dùng đường dẫn `/<ten-repository>/`.
