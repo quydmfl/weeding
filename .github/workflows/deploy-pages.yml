@@ -30,24 +30,10 @@ jobs:
         with:
           enablement: true
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Build React site
-        run: |
-          npm install --no-audit --no-fund
-          repository_name="${{ github.event.repository.name }}"
-          base_path="/${repository_name}/"
-          if [[ "$repository_name" == *.github.io ]]; then base_path="/"; fi
-          BASE_PATH="$base_path" npm run build
-          test -f dist/index.html
-
-      - name: Upload website
+      - name: Upload static website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./site
 
       - name: Deploy to GitHub Pages
         id: deployment
