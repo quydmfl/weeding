@@ -49,3 +49,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+l
+      - name: Show published website address
+        run: |
+          echo "## Thiệp mời đã được xuất bản" >> "$GITHUB_STEP_SUMMARY"
+          echo "[Mở website](${{ steps.deployment.outputs.page_url }})" >> "$GITHUB_STEP_SUMMARY"
