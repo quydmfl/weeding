@@ -28,10 +28,23 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build React site
+        run: |
+          npm install
+          repository_name="${{ github.event.repository.name }}"
+          base_path="/${repository_name}/"
+          if [[ "$repository_name" == *.github.io ]]; then base_path="/"; fi
+          npm run build -- --base="$base_path"
+
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./dist
 
       - name: Deploy to GitHub Pages
         id: deployment
