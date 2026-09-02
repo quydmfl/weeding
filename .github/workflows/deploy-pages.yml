@@ -35,11 +35,12 @@ jobs:
 
       - name: Build React site
         run: |
-          npm install
+          npm install --no-audit --no-fund
           repository_name="${{ github.event.repository.name }}"
           base_path="/${repository_name}/"
           if [[ "$repository_name" == *.github.io ]]; then base_path="/"; fi
           npm run build -- --base="$base_path"
+          test -f dist/index.html
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
@@ -49,7 +50,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-l
+
       - name: Show published website address
         run: |
           echo "## Thiệp mời đã được xuất bản" >> "$GITHUB_STEP_SUMMARY"
