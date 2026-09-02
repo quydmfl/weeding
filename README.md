@@ -21,6 +21,7 @@ Sau lần xuất bản đầu tiên, mỗi thay đổi mới trên `main` sẽ t
 3. Mở trang kết quả của workflow: phần **Summary** sẽ có nút **Mở website** sau bước deploy. URL cũng xuất hiện trong environment `github-pages` ở bên phải workflow run.
 4. Lần triển khai đầu tiên có thể cần vài phút để URL hoạt động. Nếu URL trả về 404 sau đó, kiểm tra workflow được chạy từ `main` và thử **Run workflow** một lần nữa.
 5. Với repository tên `<ten-tai-khoan>.github.io`, website ở đường dẫn gốc; các repository khác dùng đường dẫn `/<ten-repository>/`.
+6. Nếu chỉ thấy dòng “Thiệp mời đang được tải…”, mở **Actions → workflow run → Build React site** để xem lỗi JavaScript/build. Trang có phần dự phòng này để không còn hiển thị nền trống khi bundle JavaScript không tải được.
 
 ## Chỉnh sửa nội dung
 

@@ -39,7 +39,7 @@ jobs:
           repository_name="${{ github.event.repository.name }}"
           base_path="/${repository_name}/"
           if [[ "$repository_name" == *.github.io ]]; then base_path="/"; fi
-          npm run build -- --base="$base_path"
+          BASE_PATH="$base_path" npm run build
           test -f dist/index.html
 
       - name: Upload website
