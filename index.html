@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f4ed" />
+    <title>Minh & An — Thiệp mời cưới</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="invitation-shell">
+      <div class="paper-grain"></div>
+      <div class="botanical botanical-left" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="botanical botanical-right" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <header class="topbar">
+        <a class="monogram" href="#top" aria-label="Minh và An">M<span>&</span>A</a>
+        <button class="rsvp-link" type="button" data-scroll-to="rsvp">Xác nhận tham dự <span>↘</span></button>
+      </header>
+
+      <section class="hero" id="top" aria-labelledby="invite-title">
+        <p class="eyebrow">Trân trọng kính mời</p>
+        <p class="families">Gia đình nhà trai <i>•</i> Gia đình nhà gái</p>
+        <div class="ornament" aria-hidden="true"><span></span><b>✦</b><span></span></div>
+        <h1 id="invite-title"><em>Minh</em><span>&amp;</span><em>An</em></h1>
+        <p class="hero-message">Cùng chung vui trong ngày chúng mình<br />về chung một nhà.</p>
+        <a class="date-stamp" href="#details" aria-label="Xem chi tiết buổi tiệc">
+          <span class="line"></span>
+          <span class="weekday">Thứ bảy</span>
+          <strong>21</strong>
+          <span class="month">Tháng 11 · 2026</span>
+          <span class="line"></span>
+        </a>
+      </section>
+
+      <section class="details" id="details" aria-label="Thông tin hôn lễ">
+        <article class="detail-card">
+          <p class="card-label">Lễ thành hôn</p>
+          <h2>09:00</h2>
+          <p>Thứ bảy, 21 tháng 11 năm 2026</p>
+          <div class="small-rule"></div>
+          <p class="address">Tư gia nhà gái<br /><span>12 đường Hoa Hồng, Quận 7, TP. Hồ Chí Minh</span></p>
+        </article>
+        <article class="detail-card featured">
+          <p class="card-label">Tiệc mừng</p>
+          <h2>18:00</h2>
+          <p>Thứ bảy, 21 tháng 11 năm 2026</p>
+          <div class="small-rule"></div>
+          <p class="address">Nhà hàng The Reverie<br /><span>Times Square, Quận 1, TP. Hồ Chí Minh</span></p>
+        </article>
+      </section>
+
+      <section class="note">
+        <p class="eyebrow">Save the date</p>
+        <blockquote>“Tình yêu không phải là nhìn vào nhau,<br />mà là cùng nhìn về một hướng.”</blockquote>
+      </section>
+
+      <section class="rsvp" id="rsvp" aria-labelledby="rsvp-title">
+        <div class="rsvp-copy">
+          <p class="eyebrow">Thân mời</p>
+          <h2 id="rsvp-title">Sự hiện diện của bạn<br />là niềm vui của chúng mình.</h2>
+          <p>Vui lòng phản hồi trước ngày <strong>01.11.2026</strong> để chúng mình được đón tiếp chu đáo.</p>
+        </div>
+        <form class="rsvp-form" id="rsvp-form">
+          <label>Họ và tên<input required name="name" placeholder="Nguyễn Văn A" autocomplete="name" /></label>
+          <label>Bạn sẽ tham dự chứ?
+            <select required name="attendance">
+              <option value="" selected disabled>Chọn lời hồi đáp</option>
+              <option>Rất vui được tham dự</option>
+              <option>Xin phép gửi lời chúc mừng</option>
+            </select>
+          </label>
+          <button class="submit-button" type="submit">Gửi hồi đáp <span>→</span></button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <footer>MINH &amp; AN <span>·</span> 21.11.2026</footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
